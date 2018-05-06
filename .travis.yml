@@ -3,8 +3,8 @@ sudo: false
 before_install:
   - source <(curl -SLs https://raw.githubusercontent.com/adafruit/travis-ci-arduino/master/install.sh)
 install:
+  - sudo apt-get install -qq gcc-avr binutils-avr avr-libc
   - arduino --install-library "aREST"
-  - arduino --install-library "avr/wdt"
 script:
   - build_main_platforms
 notifications:
