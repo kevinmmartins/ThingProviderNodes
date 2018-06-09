@@ -61,6 +61,30 @@ Resources:
  ### On
  ![alt text](https://user-images.githubusercontent.com/20428703/39284291-e48e76be-48e8-11e8-9e73-a64c45152e38.PNG)
  
+ Json example:
+ ```json
+{
+    "return_value":1,
+    "id":2,
+    "name":"ledApi",
+    "hardware":"arduino",
+    "connected":true
+}
+
+```
+ 
  ### Off
  ![alt text](https://user-images.githubusercontent.com/20428703/39284290-e44b6946-48e8-11e8-807c-d08ac41019f2.PNG)
+ 
+ Json example:
+ ```json
+{
+    "return_value":0,
+    "id":2,
+    "name":"ledApi",
+    "hardware":"arduino",
+    "connected":true
+}
+
+```
  
