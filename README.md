@@ -18,7 +18,6 @@ The Arduino Nodes to ThingProvider
  ![alt text](https://user-images.githubusercontent.com/20428703/39284286-e34afcc8-48e8-11e8-9743-cfb94a5d2a45.JPG)
  ![alt text](https://user-images.githubusercontent.com/20428703/39284287-e3878b7a-48e8-11e8-987f-88dd75ce16ca.JPG)
  
-Resources:
  ### GET
  http://192.168.0.10:98/rainDigitalValue
  ![alt text](https://user-images.githubusercontent.com/20428703/39284285-e30d17dc-48e8-11e8-8707-59f249e5c0c7.PNG)
@@ -54,7 +53,6 @@ Resources:
  ![alt text](https://user-images.githubusercontent.com/20428703/39284288-e3ca00cc-48e8-11e8-80f8-f71e747d1fc2.JPG)
  ![alt text](https://user-images.githubusercontent.com/20428703/39284289-e409234c-48e8-11e8-86ac-394cb4f7e28f.JPG)
  
- Resource:
  ### POST 
  192.168.0.10:98/led
  
