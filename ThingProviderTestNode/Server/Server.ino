@@ -51,7 +51,7 @@ void startLdrApi() {
   pinMode(LDR_2, INPUT);
   //define the rest variables
   restLdr.variable("ldrZero", &ldrZeroValue);
-  restLdr.variable("lrdOne", &ldrOneValue);
+  restLdr.variable("ldrOne", &ldrOneValue);
   restLdr.variable("ldrTwo", &ldrTwoValue);
   restLdr.set_id("1");
   restLdr.set_name("ldrAPI");
@@ -68,18 +68,21 @@ void loop()
 }
 
 void readAnalogicPortLdrZero() {
+  delay(1000);
   ldrZeroValue = analogRead(LDR_0);
   Serial.println(LDR_ZERO_MESSAGE);
   Serial.println(ldrZeroValue);
 }
 
 void readAnalogicPortLdrOne() {
+  delay(1000);
   ldrOneValue = analogRead(LDR_1);
   Serial.println(LDR_ONE_MESSAGE);
   Serial.println(ldrOneValue);
 }
 
 void readAnalogicPortLdrTwo() {
+  delay(1000);
   ldrTwoValue = analogRead(LDR_2);
   Serial.println(LDR_TWO_MESSAGE);
   Serial.println(ldrTwoValue);
