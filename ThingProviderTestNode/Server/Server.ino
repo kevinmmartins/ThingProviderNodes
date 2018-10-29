@@ -8,6 +8,10 @@ const int LDR_0 = A0;
 const int LDR_1 = A1;
 const int LDR_2 = A2;
 
+// Reles Pins
+const int RELE_0 = 12;
+const int RELE_1 = 13;
+
 // Messages
 const String LDR_ZERO_MESSAGE = "LDR Zero value : ";
 const String LDR_ONE_MESSAGE = "LDR One value : ";
@@ -25,12 +29,14 @@ EthernetServer server(98);
 
 // Create aREST instance
 aREST restLdr = aREST();
+aREST restRele = aREST();
 
 void setup()
 {
   Serial.begin(115200);
   startServer();
   startLdrApi();
+  startReleApi();
 }
 
 void startServer() {
@@ -49,12 +55,20 @@ void startLdrApi() {
   pinMode(LDR_0, INPUT);
   pinMode(LDR_1, INPUT);
   pinMode(LDR_2, INPUT);
-  //define the rest variables
   restLdr.variable("ldrZero", &ldrZeroValue);
   restLdr.variable("ldrOne", &ldrOneValue);
   restLdr.variable("ldrTwo", &ldrTwoValue);
   restLdr.set_id("1");
   restLdr.set_name("ldrAPI");
+}
+
+void startReleApi() {
+  pinMode(RELE_0, OUTPUT);
+  pinMode(RELE_1, OUTPUT);
+  restRele.set_name("releAPI");
+  restRele.set_id("2");
+  restRele.function("releZero", releZeroControl);
+  restRele.function("releOne", releOneControl);
 }
 
 void loop()
@@ -64,6 +78,7 @@ void loop()
   readAnalogicPortLdrTwo();
   EthernetClient client = server.available();
   restLdr.handle(client);
+  restRele.handle(client);
   wdt_reset();
 }
 
@@ -87,5 +102,18 @@ void readAnalogicPortLdrTwo() {
   Serial.println(LDR_TWO_MESSAGE);
   Serial.println(ldrTwoValue);
 }
+
+int releZeroControl(String command) {
+  int state = command.toInt();
+  digitalWrite(RELE_0, state);
+  return 1;
+}
+
+int releOneControl(String command) {
+  int state = command.toInt();
+  digitalWrite(RELE_1, state);
+  return 1;
+}
+
 
 
