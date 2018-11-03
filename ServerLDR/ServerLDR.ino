@@ -64,10 +64,6 @@ void loop()
   EthernetClient client = server.available();
   restLdr.handle(client);
   wdt_reset();
-  Serial.println("API endpoints is at ");
-  Serial.println(Ethernet.localIP()+":98/ldrZero");
-  Serial.println(Ethernet.localIP()+":98/ldrOne");
-  Serial.println(Ethernet.localIP()+":98/ldrTwo");
 }
 
 void readAnalogicPortLdrZero() {

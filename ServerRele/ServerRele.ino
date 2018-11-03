@@ -4,15 +4,15 @@
 #include <avr/wdt.h>
 
 // Reles Pins
-const int RELE_0 = 12;
-const int RELE_1 = 13;
+const int RELE_0 = 2;
+const int RELE_1 = 3;
 
 // Messages
 const String RELE_RECEIVE = "Message received";
 
 //Ethernet configuration
-byte mac[] = { 0x90, 0xA2, 0xDA, 0x0E, 0xFE, 0x40 };
-IPAddress ip(192, 168, 2, 6);
+byte mac[] = { 0x90, 0xA1, 0xDA, 0x0E, 0xFE, 0x38 };
+IPAddress ip(192, 168, 2, 7);
 EthernetServer server(99);
 
 // Create aREST instance
@@ -56,16 +56,31 @@ void loop()
 int releZeroControl(String command) {
   Serial.println(RELE_RECEIVE);
   int state = command.toInt();
-  digitalWrite(RELE_0, state);
-  return 1;
+  checkState(RELE_0, state);
+  return state;
 }
 
 int releOneControl(String command) {
   Serial.println(RELE_RECEIVE);
   int state = command.toInt();
-  digitalWrite(RELE_1, state);
-  return 1;
+  checkState(RELE_1, state);
+  return state;
 }
+
+void checkState(int pin , int state) {
+  Serial.println(state);
+  Serial.println(pin);
+  if (state > 0) {
+    Serial.println("HIGH");
+    digitalWrite(pin, HIGH);
+  }
+  else {
+    Serial.println("LOW");
+    digitalWrite(pin, LOW);
+  }
+}
+
+
 
 
 
