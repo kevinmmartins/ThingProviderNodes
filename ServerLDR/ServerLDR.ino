@@ -49,9 +49,9 @@ void startLdrApi() {
   pinMode(LDR_0, INPUT);
   pinMode(LDR_1, INPUT);
   pinMode(LDR_2, INPUT);
-  restLdr.variable("ldrZero", &ldrZeroValue);
-  restLdr.variable("ldrOne", &ldrOneValue);
-  restLdr.variable("ldrTwo", &ldrTwoValue);
+  restLdr.variable("ldr", &ldrZeroValue);
+  restLdr.variable("ldr", &ldrOneValue);
+  restLdr.variable("ldr", &ldrTwoValue);
   restLdr.set_id("1");
   restLdr.set_name("ldrAPI");
 }
