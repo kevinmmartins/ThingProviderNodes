@@ -1,6 +1,7 @@
 # ThingProviderNodes
 The Arduino Nodes to ThingProvider 
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8f5abf9decd64ae5a511feca073ec2fb)](https://app.codacy.com/app/kevinmmartins/ThingProviderNodes?utm_source=github.com&utm_medium=referral&utm_content=kevinmmartins/ThingProviderNodes&utm_campaign=Badge_Grade_Dashboard)
 ## Build Status [![Build Status](https://travis-ci.org/kevinmmartins/ThingProviderNodes.svg?branch=master)](https://travis-ci.org/kevinmmartins/ThingProviderNodes)
 
 ![alt text](https://user-images.githubusercontent.com/20428703/38177975-3c21b5d4-35df-11e8-8193-aff06af8f356.png)
